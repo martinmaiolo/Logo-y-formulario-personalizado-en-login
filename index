@@ -1,0 +1,55 @@
+//Logo y formulario personalizado en login
+function my_custom_login_logo() {
+    echo '<style type="text/css">
+        body {
+            background: #015000;
+        }
+        h1 a { 
+            background-image:url(https://www.ingresosviaweb.com/wp-content/uploads/2021/02/logo-via-web.png) !important;
+            background-size:100px !important;
+            width: 200px !important;
+            height: 102px !important;
+        }
+        .login label {
+            color: #ffffff;
+        }
+        .login input {
+            border-radius: 0px;
+            border: none;
+        }
+         .login form {
+            background: #015000;
+            box-shadow: none;
+            border-top: none;
+            border-bottom: 1px dotted #f1f1f1;
+            border-right: none;
+            border-left: none;
+        }
+        .login #wp-submit {
+            border: none;
+            border-radius: 0px;
+            background-color: #06a80d;
+        }
+        .login .wp-core-ui .button, .wp-core-ui .button-secondary {
+            border-color: none;
+            box-shadow: noen;
+        }
+        .login #nav,
+        .login #backtoblog,
+        .login a {
+            text-align: center;
+        }
+        .login #nav a,
+        .login #backtoblog a {
+            color: #ffffff;
+        }
+        </style>';
+}
+add_action('login_head', 'my_custom_login_logo');
+add_action( 'password_protected_login_head', 'my_custom_login_logo');
+ 
+//Personalizar url logo acceso
+add_action( 'login_headerurl', 'my_custom_login_url' );
+function my_custom_login_url() {
+return 'https://www.ingresosviaweb.com';
+}
